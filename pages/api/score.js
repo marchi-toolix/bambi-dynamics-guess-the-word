@@ -6,7 +6,7 @@ const connectMiddleware = (handler) => async (req, res) => {
     if (!nSQL().listDatabases().includes(dbName)) {
         await nSQL().createDatabase({
             id: dbName,
-            mode: 'PERM',
+            mode: 'TEMP',
             tables: [
                 {
                     name: "score",
