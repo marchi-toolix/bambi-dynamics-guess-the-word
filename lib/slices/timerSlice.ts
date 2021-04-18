@@ -8,7 +8,7 @@ type TimerState = {
 
 const initialState: TimerState = {
   isRuning: false,        //  
-  timeCount: 900,
+  timeCount: 30,
 };
 
 const timerSlice = createSlice({
