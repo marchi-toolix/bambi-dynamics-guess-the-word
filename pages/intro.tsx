@@ -74,7 +74,7 @@ function Index() {
           </motion.div>
           <h6>
             This game brought to You by Daniel Marchi as first assigment for
-            Bamabi Dainamycs.
+            Bamabi Dynamics.
             <br />
             Build using React.js, Next.js, Redux, Redux-Toolkit, Mateiral-UI,
             NanoSQL
