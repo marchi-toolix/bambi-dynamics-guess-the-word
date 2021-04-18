@@ -1,23 +1,35 @@
-import { useDispatch } from 'react-redux'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-import Clock from '../components/clock'
-import Counter from '../components/counter'
-import { tick } from '../lib/slices/clockSlice'
-import useInterval from '../lib/useInterval'
-
-const IndexPage = () => {
-  const dispatch = useDispatch()
-  // Tick the time every second
-  useInterval(() => {
-    dispatch(tick({ light: true, lastUpdate: Date.now() }))
-  }, 1000)
-
+function index() {
+  const router = useRouter();
+  useEffect(() => {
+    router.push('intro')
+  }, []);
   return (
-    <>
-      <Clock />
-      <Counter />
-    </>
-  )
+    <div className="index-page">
+      <div
+        onClick={() => {
+          router.push("intro");
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "BestFriends",
+            color: "#ff5722",
+            border: "2px solid black",
+            textShadow:
+              "-2.5px 0 black, 0 2.5px black, 2.5px 0 black, 0 -2.5px black",
+            mixBlendMode: "multiply",
+          }}
+        >
+          W E L C O M E
+          <br />
+          Click here to start
+        </h1>
+      </div>
+    </div>
+  );
 }
 
-export default IndexPage
+export default index;
